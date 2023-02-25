@@ -1,0 +1,29 @@
+.benefits {
+  display: flex;
+
+  .benefits__item {
+    flex: 1;
+    padding: 0 2.2%;
+    position: relative;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: url(../../img/why/shapes.png);
+      position: absolute;
+      top: 60px;  
+      right: 0;
+      transform: translatex(50%);
+    }
+  }
+}
