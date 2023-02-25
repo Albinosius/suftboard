@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    font: 400 18px/1.42 'Alegreya Sans', Helvetica, sans-serif;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    position: relative;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-width: $containerWidth + 20px;
+    min-height: 100%;
+    overflow: hidden;
+    background: url("../img/background/two-boy.png") center top no-repeat;
+}
+
+.container {
+    margin: 0 auto;
+    width: $containerWidth;
+}
+
+
+// tag styles reset
+a {
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    li {
+        list-style: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+}

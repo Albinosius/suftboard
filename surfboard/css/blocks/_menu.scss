@@ -1,0 +1,17 @@
+.menu__list {
+  display: flex;
+  align-items: center;
+  .menu__item {
+    margin-right: 23px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .menu__link {
+      text-decoration: none;
+    }
+  }
+}
+
+
