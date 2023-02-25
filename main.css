@@ -20,7 +20,7 @@ body {
   min-width: 960px;
   min-height: 100%;
   overflow: hidden;
-  background: url("/suftboard/img/background/two-boy.png") center top no-repeat;
+  background: url("suftboard/img/background/two-boy.png") center top no-repeat;
 }
 
 .container {
@@ -248,7 +248,7 @@ img {
 }
 
 .section--font-color--white {
-  background: url(/suftboard/img/background/order-back.png) center center no-repeat;
+  background: url("suftboard/img/background/order-back.png") center center no-repeat;
   color: #fff;
 }
 
