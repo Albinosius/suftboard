@@ -5,10 +5,10 @@
   margin-right: 18px;
 
   &:last-child {
-    margin-bottom: 0;
+    margin-right: 0;
   }
 
-  .radio__elem {
+  &__elem {
     display: none;
     
     &:checked ~ .radio__visible {
@@ -18,7 +18,7 @@
     }
   }
 
-  .radio__visible {
+  &__visible {
     width: 26px;
     height: 26px;
     position: relative;
@@ -50,5 +50,4 @@
     }
 
   }
-  // .radio__title {}
 }

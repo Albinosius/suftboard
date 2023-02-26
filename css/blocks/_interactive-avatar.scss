@@ -9,7 +9,8 @@
   &--active {
     border-color: $yellow;
   }
-  .interactive-avatar__link {
+
+  &__link {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +19,7 @@
     display: block;
   }
 
-  .interactive-avatar__img {
+  &__img {
     display: block;
     height: 100%;
     width: 100%;

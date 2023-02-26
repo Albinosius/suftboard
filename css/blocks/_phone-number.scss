@@ -3,10 +3,11 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+
+  &__icon-elem {
+    width: 13px;
+    height: 14px;
+    margin-right: 6px;
+  }
 }
 
-.phone-number__icon-elem {
-  width: 13px;
-  height: 14px;
-  margin-right: 6px;
-}

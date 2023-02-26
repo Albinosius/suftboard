@@ -1,16 +1,16 @@
 .menu__list {
   display: flex;
   align-items: center;
-  .menu__item {
+  &__item {
     margin-right: 23px;
 
     &:last-child {
       margin-right: 0;
     }
+  }
 
-    .menu__link {
-      text-decoration: none;
-    }
+  &__link {
+    text-decoration: none;
   }
 }
 
