@@ -2,6 +2,8 @@
   height: 100vh;
   min-height: 652px;
   color: #fff;
+  overflow: hidden;
+  background: url("../img/background/two-boy.png") center top no-repeat;
 
   &__container {
     display: flex;

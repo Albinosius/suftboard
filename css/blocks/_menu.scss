@@ -1,6 +1,9 @@
-.menu__list {
-  display: flex;
-  align-items: center;
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
   &__item {
     margin-right: 23px;
 
@@ -13,5 +16,3 @@
     text-decoration: none;
   }
 }
-
-
