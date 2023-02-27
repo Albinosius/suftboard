@@ -80,7 +80,7 @@ img {
   min-height: 652px;
   color: #fff;
   overflow: hidden;
-  background: url("../img/background/two-boy.png") center top no-repeat;
+  background: url("./img/background/two-boy.png") center top no-repeat;
 }
 .hero__container {
   display: -webkit-box;
@@ -245,7 +245,7 @@ img {
 }
 
 .section--font-color--white {
-  background: url(../../img/background/order-back.png) center center no-repeat;
+  background: url(./img/background/order-back.png) center center no-repeat;
   background-size: contain;
   color: #fff;
 }
