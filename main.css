@@ -85,7 +85,7 @@ img {
   min-height: 36.2rem;
   color: #fff;
   overflow: hidden;
-  background: url("../img/background/two-boy.png") top right 10% no-repeat;
+  background: url("./img/background/two-boy.png") top right 10% no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
@@ -447,7 +447,7 @@ img {
 }
 
 .section--font-color--white {
-  background: url(../../img/background/order-back.png) center center no-repeat;
+  background: url(./img/background/order-back.png) center center no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
