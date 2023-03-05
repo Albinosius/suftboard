@@ -1,10 +1,15 @@
+
+html {
+    font-size: $basefontsize;
+    font-family: 'Alegreya Sans', Helvetica, sans-serif;
+}
+
 html, body {
     height: 100%;
 }
 
 body {
     background: #fff;
-    font: 400 18px/1.42 'Alegreya Sans', Helvetica, sans-serif;
     color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,14 +20,14 @@ body {
 .wrapper {
     position: relative;
     width: 100%;
-    min-width: $containerWidth + 20px;
     min-height: 100%;
-    
+    overflow: hidden;
 }
 
 .container {
+    width: 95%;
+    max-width: $containerWidth;
     margin: 0 auto;
-    width: $containerWidth;
 }
 
 

@@ -1,6 +1,11 @@
 $containerWidth: 940px;
 $basefontsize: 18px;
 
+// breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+
 //colors
 $yellow: #FEDB3F;
 $gray: #666;
@@ -9,6 +14,10 @@ $black: #292929;
 //z-index
 
 $z-fixed-menu: 100;
+$z-logo: 2;
+$z-humburger: 2;
+
+@import "./media";
 
 //normolize
 @import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
@@ -20,11 +29,16 @@ $z-fixed-menu: 100;
 //components
 @import "./blocks/hero";
 @import "./blocks/header";
+@import "./blocks/logo";
 @import "./blocks/menu";
 @import "./blocks/phone-number";
+
+@import "./blocks/hamburger";
+
 @import "./blocks/features";
 @import "./blocks/feature";
 @import "./blocks/btn";
+
 
 @import "./blocks/section";
 @import "./blocks/headline";
@@ -41,7 +55,8 @@ $z-fixed-menu: 100;
 @import "./blocks/map";
 @import "./blocks/socials";
 @import "./blocks/footer";
-// @import "";
+
+
 // @import "";
 // @import "";
 // @import "";
