@@ -1,6 +1,10 @@
 .benefits {
   display: flex;
 
+  @include phones {
+    flex-direction: column;
+  }
+
   &__item {
     flex: 1;
     padding: 0 2.2%;
@@ -21,9 +25,13 @@
     &::before {
       content: url(../../img/why/shapes.png);
       position: absolute;
-      top: 60px;  
+      top: 3.33rem;  
       right: 0;
       transform: translatex(50%);
+
+      @include phones {
+        display: none;
+      }
     }
   }
 }

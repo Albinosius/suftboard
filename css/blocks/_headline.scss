@@ -2,13 +2,29 @@
   text-align: center;
 
   &__title {
-    margin-bottom: 13px;
+    margin-bottom: 0.72rem;
+
+    @include tablets {
+      margin-bottom: rem(19px);
+    }
+
+    @include phones {
+      font-size: rem(40px);
+    }
   }
 
   &__subtitle {
     color: $gray;
     padding: 0 27%;
     line-height: 1.15;
-    margin-bottom: 50px;
+    margin-bottom: 2.78rem;
+
+    @include tablets {
+      padding: 0 12%;
+    }
+
+    @include phones {
+      padding: 0;
+    }
   }
 }

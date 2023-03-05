@@ -1,6 +1,6 @@
 .section {
   height: 100vh;
-  min-height: 652px;
+  min-height: rem(652px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,22 +8,27 @@
 
 .section--font-color--white {
   background: url(../../img/background/order-back.png) center center no-repeat;
-  background-size: contain;
+  object-fit: cover;
+  background-size: cover;
   color: #fff;
 }
 
 .section__title {
-  font-size: 48px;
+  font-size: rem(48px);
   font-weight: bold;
-  margin-bottom: 60px;
+  margin-bottom: 3.33rem;
   text-align: center;
   text-transform: uppercase;
 
   &--review {
-    margin-bottom: 26px;
+    margin-bottom: 1.44rem;
+
+    @include tablets {
+      margin-bottom: rem(34px);
+    }
   }
 
   &--form {
-    margin-bottom: 50px;
+    margin-bottom: 2.78rem;
   }
 }

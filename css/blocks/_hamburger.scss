@@ -1,0 +1,25 @@
+.hamburger {
+  width: 26px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  overflow: hidden;
+  z-index: $z-humburger;
+  margin-top: 10px;
+
+  @include tablets {
+    display: inline-flex;
+  }
+
+  @include phones {
+    margin-top: 7px;
+  }
+
+  &__plank {
+    display: block;
+    background: #fff;
+    height: 4.5px;
+    border-radius: 10px;
+  }
+}
