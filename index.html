@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Suftboard</title>
   <link rel="stylesheet" href="./main.css">
 </head>
 
@@ -17,7 +18,9 @@
 
           <header class="header">
             <a href="index.html" class="logo">
-              <img src="./img/icon/logo.png" alt="логотип" class="logo__pic">
+              <svg class="logo__pic">
+                <use xlink:href="./img/sprite.svg#logo"></use>
+              </svg>
             </a>
             <nav class="menu">
               <ul class="menu__list">
@@ -31,11 +34,19 @@
               </ul>
             </nav>
 
-            <a href="tel:+78009039090" class="phone-number">
+            <a href="tel:+78009039090" class="phone-number header__phone-number">
               <span class="phone-number__icon">
-                <img src="./img/icon/phone.png" alt="" class="phone-number__icon-elem">
+                <svg class="phone-number__icon-elem">
+                  <use xlink:href="./img/sprite.svg#phone"></use>
+                </svg>
               </span>
-              <span class="phone-nimber__text">8 800 903 90 90</span>
+              <span class="phone-number__text">8 800 903 90 90</span>
+            </a>
+
+            <a href="" class="hamburger">
+              <span class="hamburger__plank"></span>
+              <span class="hamburger__plank"></span>
+              <span class="hamburger__plank"></span>
             </a>
           </header>
 
@@ -51,7 +62,9 @@
             <ul class="features">
               <li class="features__item feature">
                 <div class="feature__icon">
-                  <img src="./img/hero__add/serf.png" alt="">
+                  <svg class="feature__icon-elem">
+                    <use xlink:href="./img/sprite.svg#serf"></use>
+                 </svg>
                 </div>
                 <div class="feature__text">
                   Уникальный дизайн
@@ -59,7 +72,9 @@
               </li>
               <li class="features__item feature">
                 <div class="feature__icon">
-                  <img src="./img/hero__add/material.png" alt="">
+                  <svg class="feature__icon-elem">
+                    <use xlink:href="./img/sprite.svg#saw"></use>
+                 </svg>
                 </div>
                 <div class="feature__text">
                   Прочные материалы
@@ -67,7 +82,9 @@
               </li>
               <li class="features__item feature">
                 <div class="feature__icon">
-                  <img src="./img/hero__add/car.png" alt="">
+                  <svg class="feature__icon-elem">
+                    <use xlink:href="./img/sprite.svg#car"></use>
+                 </svg>
                 </div>
                 <div class="feature__text">
                   Быстрая доставка
@@ -242,7 +259,11 @@
               <div class="form__controls form__controls--checkbox">
                 <label class="radio radio--checkbox">
                   <input type="checkbox" class="radio__elem">
-                  <div class="radio__visible"></div>
+                  <div class="radio__visible">
+                    <svg class="radio__visible-pic">
+                      <use xlink:href="./img/sprite.svg#chek"></use>
+                    </svg>
+                  </div>
                   <div class="radio__title">Не перезванивать</div>
                 </label>
               </div>
@@ -267,7 +288,9 @@
             <div class="footer__address">Москва, ул.Новый Арбат, д.31/12</div>
             <a href="tel:+78009039090" class="phone-number footer__phone-number">
               <span class="phone-number__icon">
-                <img src="./img/icon/phone.png" alt="" class="phone-number__icon-elem">
+                <svg class="phone-number__icon-elem phone-number__icon-elem--footer">
+                  <use xlink:href="./img/sprite.svg#phone"></use>
+                </svg>
               </span>
               <span class="phone-nimber__text">8 800 903 90 90</span>
             </a>
@@ -275,16 +298,32 @@
           <div class="footer__col">
             <ul class="socials footer__socials">
               <li class="socials__item socials__item--item-vk">
-                <a href="#" class="socials__link"></a>
+                <a href="#" class="socials__link">
+                  <svg class="socials__link-icon">
+                    <use xlink:href="./img/sprite.svg#vk"></use>
+                 </svg>
+                </a>
               </li>
               <li class="socials__item socials__item--item-fb">
-                <a href="#" class="socials__link"></a>
+                <a href="#" class="socials__link">
+                  <svg class="socials__link-icon">
+                    <use xlink:href="./img/sprite.svg#fb"></use>
+                 </svg>
+                </a>
               </li>
               <li class="socials__item socials__item--item-inst">
-                <a href="#" class="socials__link"></a>
+                <a href="#" class="socials__link">
+                  <svg class="socials__link-icon">
+                    <use xlink:href="./img/sprite.svg#inst"></use>
+                 </svg>
+                </a>
               </li>
               <li class="socials__item socials__item--item-tw">
-                <a href="#" class="socials__link"></a>
+                <a href="#" class="socials__link">
+                  <svg class="socials__link-icon">
+                    <use xlink:href="./img/sprite.svg#tw"></use>
+                 </svg>
+                </a>
               </li>
             </ul>
           </div>
