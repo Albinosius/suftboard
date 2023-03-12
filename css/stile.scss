@@ -15,7 +15,8 @@ $black: #292929;
 
 $z-fixed-menu: 100;
 $z-logo: 2;
-$z-humburger: 2;
+$z-humburger: 100;
+$z-shop:-100;
 
 @import "./media";
 
@@ -45,6 +46,12 @@ $z-humburger: 2;
 @import "./blocks/benefits";
 @import "./blocks/benefit";
 
+@import "./blocks/slider";
+@import "./blocks/sizes";
+@import "./blocks/parameters";
+@import "./blocks/parameter";
+@import "./blocks/arrow";
+
 @import "./blocks/reviews";
 @import "./blocks/interactive-avatar";
 
@@ -52,6 +59,8 @@ $z-humburger: 2;
 @import "./blocks/radio";
 
 @import "./blocks/fixed-menu";
+@import "./blocks/overlay";
+
 @import "./blocks/map";
 @import "./blocks/socials";
 @import "./blocks/footer";
