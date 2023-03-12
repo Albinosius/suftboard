@@ -6,11 +6,6 @@
   }
 
   &__image {
-    margin-bottom: 0.6rem;
-
-    @include tablets {
-      margin-bottom: rem(17px);
-    }
     @include phones {
       margin-right: rem(15px);
     }

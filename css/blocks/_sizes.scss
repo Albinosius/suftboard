@@ -1,0 +1,30 @@
+.sizes {
+  display: flex;
+  margin-bottom: rem(19px);
+
+  @include tablets {
+    justify-content: center;
+    margin-bottom: 19px;
+  }
+
+  &__item {
+    height: rem(44px);
+    margin-right: rem(54px);
+
+    @include tablets {
+      margin-right: rem(41px);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__param {
+    color: $gray;
+  }
+
+  &__value {
+    font-weight: bold;
+  }
+}
