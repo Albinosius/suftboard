@@ -1,4 +1,5 @@
 .slider {
+  position: relative;
 
   &--container {
     position: relative;
@@ -11,9 +12,14 @@
     align-items: center;
     gap: 13%;
 
+
     @include tablets {
       flex-direction: column;
       gap: rem(29px);
+    }
+
+    @include phones {
+      gap: rem(59px);
     }
   }
 
@@ -21,9 +27,14 @@
   &__pic {
     width: rem(420px);
     position: relative;
+    z-index: $z-slider-pic;
 
     @include tablets {
       width: rem(326px);
+    }
+
+    @include phones {
+      width: rem(262px);
     }
   }
 
@@ -44,7 +55,7 @@
     top: 56%;
     left: 62%;
     transform: translate(-50%, -50%);
-    z-index: $z-shop;
+    z-index: $z-slider-spot;
 
     @include tablets {
       transform: translate(-65%, -44%);
@@ -123,6 +134,10 @@
     @include tablets {
       padding: 0 rem(90px);
     }
+
+    @include phones {
+      padding: 0 rem(30px);
+    }
   }
 
   &__price {
@@ -137,6 +152,10 @@
 
     @include tablets {
       justify-content: center;
+    }
+
+    @include phones {
+      gap: rem(30px);
     }
   }
 }
