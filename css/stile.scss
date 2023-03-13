@@ -13,10 +13,12 @@ $black: #292929;
 
 //z-index
 
-$z-fixed-menu: 100;
-$z-logo: 2;
-$z-humburger: 100;
-$z-shop:-100;
+$z-fixed-menu: 10;
+$z-logo: 5;
+$z-humburger: 10;
+$z-shop:-10;
+$z-slider-pic: 5;
+$z-slider-spot: -5;
 
 @import "./media";
 
