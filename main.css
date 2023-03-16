@@ -90,7 +90,7 @@ img {
   min-height: 36.2rem;
   color: #fff;
   overflow: hidden;
-  background: url("./img/background/two-boy.png") top right 10% no-repeat;
+  background: url("../img/background/two-boy.png") top right 10% no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
@@ -498,7 +498,7 @@ img {
 }
 
 .section--font-color--white {
-  background: url(./img/background/order-back.png) center center no-repeat;
+  background: url(../../img/background/order-back.png) center center no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
@@ -961,35 +961,52 @@ img {
   height: 1.5rem;
 }
 .arrow--left {
-  top: 50%;
-  left: -2%;
+  -webkit-transform: translate(-477px);
+          transform: translate(-477px);
 }
 @media screen and (max-width: 768px) {
   .arrow--left {
-    top: 33%;
-    left: 18%;
+    -webkit-transform: translate(-225px);
+            transform: translate(-225px);
   }
 }
 @media screen and (max-width: 480px) {
   .arrow--left {
-    top: 29%;
-    left: -2%;
+    -webkit-transform: translate(-210px);
+            transform: translate(-210px);
   }
 }
 .arrow--right {
-  top: 50%;
-  right: -2%;
+  -webkit-transform: translate(477px);
+          transform: translate(477px);
 }
 @media screen and (max-width: 768px) {
   .arrow--right {
-    top: 33%;
-    right: 18%;
+    -webkit-transform: translate(225px);
+            transform: translate(225px);
   }
 }
 @media screen and (max-width: 480px) {
   .arrow--right {
+    -webkit-transform: translate(210px);
+            transform: translate(210px);
+  }
+}
+
+.arrow-wrap {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .arrow-wrap {
+    top: 33%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .arrow-wrap {
     top: 29%;
-    right: -2%;
   }
 }
 
