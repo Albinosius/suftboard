@@ -8,32 +8,41 @@
   }
 
   &--left {
-    top: 50%;
-    left: -2%;
+    transform: translate(-477px);
 
     @include tablets {
-      top: 33%;
-      left: 18%;
+      transform: translate(-225px);
     }
 
     @include phones {
-      top: 29%;
-      left: -2%;
+      transform: translate(-210px);
     }
   }
 
   &--right {
-    top: 50%;
-    right: -2%;
+    transform: translate(477px);
 
     @include tablets {
-      top: 33%;
-      right: 18%;
+      transform: translate(225px);
     }
 
     @include phones {
-      top: 29%;
-      right: -2%;
+      transform: translate(210px);
     }
+  }
+}
+
+.arrow-wrap {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: $z-arrow;
+
+  @include tablets {
+    top: 33%;
+  }
+
+  @include phones {
+    top: 29%;
   }
 }
