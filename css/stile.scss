@@ -10,7 +10,6 @@ $phones: 480px;
 $yellow: #FEDB3F;
 $gray: #666;
 $black: #292929;
-
 //z-index
 
 $z-fixed-menu: 10;
@@ -54,6 +53,8 @@ $z-arrow: 10;
 @import "./blocks/parameters";
 @import "./blocks/parameter";
 @import "./blocks/arrow";
+
+@import "./blocks/team";
 
 @import "./blocks/reviews";
 @import "./blocks/interactive-avatar";
