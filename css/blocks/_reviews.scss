@@ -9,6 +9,27 @@
     }
   }
 
+  &__list {
+    position: relative;
+    min-height: 280px;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: .3s;
+    opacity: 0;
+
+    &--active {
+      position: static;
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+
   &__displey-inner {
     display: flex;
 

@@ -1,41 +1,18 @@
 .arrow {
-  position: absolute;
-
   &__pic {
     width: rem(14px);
     height: rem(27px);
     // position: absolute;
-  }
-
-  &--left {
-    transform: translate(-477px);
-
-    @include tablets {
-      transform: translate(-225px);
-    }
-
-    @include phones {
-      transform: translate(-210px);
-    }
-  }
-
-  &--right {
-    transform: translate(477px);
-
-    @include tablets {
-      transform: translate(225px);
-    }
-
-    @include phones {
-      transform: translate(210px);
-    }
   }
 }
 
 .arrow-wrap {
   position: absolute;
   top: 50%;
-  right: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: $z-arrow;
 
   @include tablets {

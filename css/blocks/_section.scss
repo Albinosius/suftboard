@@ -7,9 +7,8 @@
 }
 
 .section--font-color--white {
-  background: url(../../img/background/order-back.png) center center no-repeat;
+  background: url(./img/background/order-back.png) center center/cover no-repeat;
   object-fit: cover;
-  background-size: cover;
   color: #fff;
 }
 
@@ -34,5 +33,9 @@
 
   &--form {
     margin-bottom: 2.78rem;
+  }
+
+  &--team{
+    margin-bottom: rem(50px);
   }
 }
