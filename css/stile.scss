@@ -14,13 +14,16 @@ $black: #292929;
 
 $z-fixed-menu: 10;
 $z-logo: 5;
-$z-humburger: 10;
+$z-humburger: 11;
 $z-shop:-10;
 $z-slider-pic: 5;
 $z-slider-spot: -5;
 $z-arrow: 10;
 
 @import "./media";
+
+// css для слайдера
+@import "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css";
 
 //normolize
 @import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
@@ -61,6 +64,7 @@ $z-arrow: 10;
 
 @import "./blocks/form";
 @import "./blocks/radio";
+@import "./blocks/modal";
 
 @import "./blocks/fixed-menu";
 @import "./blocks/overlay";
