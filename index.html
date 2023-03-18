@@ -7,14 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Suftboard</title>
   <link rel="stylesheet" href="./main.css">
-  <!-- <script src="./index.js"></script> -->
 </head>
 
 <body>
   <div class="wrapper">
     <div class="maincontent">
 
-      <section class="hero">
+      <!-- Закоментировала, чтоб при перезагрузке ст сразу нужная мне секция отображалась -->
+
+      <!-- <section class="hero">
         <div class="container hero__container">
 
           <header class="header">
@@ -270,6 +271,112 @@
                   </div>
                 </div>
               </li>
+              <li class="slider__item">
+                <div class="slider__pic">
+                  <img src="./img/slider/orangeBoard.png" class="slider__board" alt="">
+                  <svg class="slider__spot">
+                    <use xlink:href="./img/sprite.svg#spot"></use>
+                  </svg>
+                </div>
+                <div class="slider__inf">
+                  <div class="slider__param">
+                    <svg class="slider__param-pic">
+                      <use xlink:href="./img/sprite.svg#param"></use>
+                    </svg>
+                    <div class="slider__param-text">параметры</div>
+                    <div class="parameters">
+                      <ul class="parameters__list">
+                        <li class="parameters__item parameter">
+                          <div class="parameter__name">
+                            <div class="parameter__name-pic">
+                              <svg class="parameter__name-icon">
+                                <use xlink:href="./img/sprite.svg#horizontal-arrow"></use>
+                              </svg>
+                            </div>
+                            <div class="parameter__name-text">Длина доски</div>
+                          </div>
+                          <div class="parameter__meaning">от 1,5 м</div>
+                        </li>
+                        <li class="parameters__item parameter">
+                          <div class="parameter__name">
+                            <div class="parameter__name-pic">
+                              <svg class="parameter__name-icon">
+                                <use xlink:href="./img/sprite.svg#diagonal-arrow"></use>
+                              </svg>
+                            </div>
+                            <div class="parameter__name-text">Ширина доски</div>
+                          </div>
+                          <div class="parameter__meaning">от 30 см</div>
+                        </li>
+                        <li class="parameters__item parameter">
+                          <div class="parameter__name">
+                            <div class="parameter__name-pic">
+                              <svg class="parameter__name-icon">
+                                <use xlink:href="./img/sprite.svg#width"></use>
+                              </svg>
+                            </div>
+                            <div class="parameter__name-text">Толщина</div>
+                          </div>
+                          <div class="parameter__meaning">8 см</div>
+                        </li>
+                        <li class="parameters__item parameter">
+                          <div class="parameter__name">
+                            <div class="parameter__name-pic">
+                              <svg class="parameter__name-icon">
+                                <use xlink:href="./img/sprite.svg#hourglass"></use>
+                              </svg>
+                            </div>
+                            <div class="parameter__name-text">Срок службы</div>
+                          </div>
+                          <div class="parameter__meaning">5 лет</div>
+                        </li>
+                        <li class="parameters__item parameter">
+                          <div class="parameter__name">
+                            <div class="parameter__name-pic">
+                              <svg class="parameter__name-icon">
+                                <use xlink:href="./img/sprite.svg#kettlebell"></use>
+                              </svg>
+                            </div>
+                            <div class="parameter__name-text">Вес</div>
+                          </div>
+                          <div class="parameter__meaning">7-8 кг</div>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h3 class="slider__title">Шортборд</h3>
+                  <div class="slider__decs">
+                    <p>
+                      Самые быстрые доски для профессионалов. Размеры шортбордов позволяют быстро набирать скорость,
+                      делать различные трюки на волне, включая резкие повороты и развороты, флоатеры (проезды по самому
+                      гребню волны), различные прыжки с вращениями или без, а также катание
+                      в трубах.
+                    </p>
+                  </div>
+                  <ul class="sizes">
+                    <il class="sizes__item">
+                      <div class="sizes__param">Длина доски
+                      </div>
+                      <div class="sizes__value">от 1,5 метров
+                      </div>
+                    </il>
+                    <il class="sizes__item">
+                      <div class="sizes__param">Ширина доски
+                      </div>
+                      <div class="sizes__value">от 30 сантиметров
+                      </div>
+                    </il>
+                  </ul>
+                  <div class="slider__shop">
+                    <div class="slider__price">
+                      <p>12000 ₽</p>
+                    </div>
+                    <a href="#" class="btn btn--theme--light">ЗАКАЗАТЬ</a>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -484,7 +591,7 @@
             </ul>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="section section--font-color--white">
         <div class="container">
@@ -564,6 +671,15 @@
           </form>
         </div>
       </section>
+      <div id="modal" class="modal">
+        <div class="modal__for-background"></div>
+        <div class="modal__container">
+          <div class="modal__content">Cообщение отправлено</div>
+          <div class="modal__button-container">
+            <a href="#" class="btn app-submit-btn btn--theme--light">ЗАКРЫТЬ</a>
+          </div>
+        </div>
+      </div>
 
       <section class="section">
         <div class="container map--container">
@@ -673,6 +789,9 @@
   <script src="./script/humburger.js"></script>
   <script src="./script/team.js"></script>
   <script src="./script/rewiews.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="./script/slider.js"></script>
+  <script src="./script/form.js"></script>
 </body>
 
 </html>

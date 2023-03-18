@@ -1,3 +1,4 @@
+@import "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css";
 @import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap");
 html {
@@ -342,7 +343,7 @@ img {
           justify-content: space-between;
   display: none;
   overflow: hidden;
-  z-index: 10;
+  z-index: 11;
   position: fixed;
   top: 1.9%;
   right: 5%;
@@ -395,7 +396,7 @@ img {
 }
 
 .hamburger-menu {
-  z-index: 10;
+  z-index: 11;
 }
 .hamburger-menu__item {
   text-align: center;
@@ -774,6 +775,9 @@ img {
           align-items: center;
   cursor: pointer;
   margin-bottom: 3rem;
+}
+.slider__param:hover {
+  background: #3465A3;
 }
 .slider__param:hover .parameters {
   left: 5.0555555556rem;
@@ -1409,6 +1413,43 @@ img {
   position: absolute;
 }
 
+.modal {
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.modal--active {
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.modal__for-background {
+  height: 100%;
+  width: 100%;
+  background-color: #333537;
+  opacity: 0.7;
+}
+.modal__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  padding: 37px 66px;
+  text-align: center;
+}
+.modal__content {
+  margin-bottom: 18px;
+}
+
 .fixed-menu {
   position: fixed;
   top: 20%;
@@ -1452,8 +1493,6 @@ img {
   }
 }
 .overlay {
-  height: 100%;
-  width: 100%;
   background-color: #333537;
   display: -webkit-box;
   display: -ms-flexbox;
