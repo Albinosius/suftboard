@@ -86,6 +86,10 @@
     cursor: pointer;
     margin-bottom: rem(54px);
 
+    &:hover {
+      background: #3465A3;
+    }
+
     &:hover .parameters {
       left: rem(91px);
       opacity: .8;
