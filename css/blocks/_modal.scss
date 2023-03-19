@@ -35,6 +35,9 @@
 
   &__content {
     margin-bottom: 18px;
-  }
 
+    &--error {
+      color: #fe3f3f;
+    }
+  }
 }
