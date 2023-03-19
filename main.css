@@ -1339,6 +1339,10 @@ img {
   outline: none;
 }
 
+.input-error {
+  border-color: #fe3f3f;
+}
+
 .radio {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1448,6 +1452,9 @@ img {
 }
 .modal__content {
   margin-bottom: 18px;
+}
+.modal__content--error {
+  color: #fe3f3f;
 }
 
 .fixed-menu {

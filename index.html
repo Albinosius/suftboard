@@ -597,27 +597,28 @@
         <div class="container">
           <h2 class="section__title section__title--form">закажите доску</h2>
           <form class="form">
+            <input type="hidden" name="to" value="somewhere@mail.com">
             <div class="form__col">
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Имя</div>
-                  <input type="text" class="form__input">
+                  <input type="text" name="name" class="form__input">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Телефон</div>
-                  <input type="text" class="form__input">
+                  <input type="text" name="phone" class="form__input">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Улица</div>
-                  <input type="text" class="form__input">
+                  <input type="text" name="street" class="form__input">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Дом</div>
-                  <input type="text" class="form__input">
+                  <input type="text" name="home" class="form__input">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Корпус</div>
@@ -637,7 +638,7 @@
               <div class="form__row form__row--textarea">
                 <label class="form__block">
                   <div class="form__title">Комментарий</div>
-                  <textarea class="form__input form__input--textarea"></textarea>
+                  <textarea class="form__input form__input--textarea" name="comment"></textarea>
                 </label>
               </div>
               <div class="form__controls">
@@ -674,7 +675,7 @@
       <div id="modal" class="modal">
         <div class="modal__for-background"></div>
         <div class="modal__container">
-          <div class="modal__content">Cообщение отправлено</div>
+          <div class="modal__content"></div>
           <div class="modal__button-container">
             <a href="#" class="btn app-submit-btn btn--theme--light">ЗАКРЫТЬ</a>
           </div>
