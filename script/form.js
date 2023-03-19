@@ -28,9 +28,6 @@ $('.form').submit(e => {
 
   const isValid = validateFields(form, [name, phone, comment]);
 
-  const submit = form.find('[type="submit"]');
-  const submitClose = form.find('.app-submit-btn');
-
   if (isValid) {
     $.ajax({
       url: "https://webdev-api.loftschool.com/sendmail",
@@ -40,61 +37,22 @@ $('.form').submit(e => {
         phone: phone.val(),
         comment: comment.val(),
         to: to.val()
-      } 
-      // success: (data) => {
-      //   content.text(data.message);
+      },
+      success: (data) => {
+        content.text(data.message);
 
-      //   console.log(data);
-
-      //   submit.click(e => {
-      //     e.preventDefault();
-      //     modal.addClass("modal--active");
-      //   });
-
-      //   submitClose.click(e => {
-      //     e.preventDefault();
-      //     modal.removeClass("modal--active");
-      //   })
-      // },
-      // error: (data) => {
-      //   const message = data.responseJSON.message;
-      //   console.log(message); //не работает
-      //   content.text(message);
-      // modal.addClass("modal__content--error");
-
-      // submit.click(e => {
-      //   e.preventDefault();
-      //   modal.addClass("modal--active");
-      // });
-
-      // submitClose.click(e => {
-      //   e.preventDefault();
-      //   modal.removeClass("modal--active");
-      // })
-      // }
-    });
-
-    
-    submit.addEventListener('click', () => {
-      const xhr = new XMLHttpRequest();
-      console.log(xhr);
-      if (xhr.status >= 400) {
-        content.innertext('Заказ принят на обработку');
-      } else {
-        content.innertext('Что-то пошло не так, попробуйте снова');
-        content.addClass("modal__content--error");
+        modal.addClass("modal--active");
+      },
+      error: (error) => {
+        const message = "Ошибка сервера";
+        content.text(message);
+        modal.addClass("modal--active");
+        modal.addClass("modal__content--error");
       }
     });
+
   }
-
-  
-
-  submit.click(e => {
-    e.preventDefault();
-    modal.addClass("modal--active");
-  });
-
-  submitClose.click(e => {
+  $(".app-submit-btn").click((e) => {
     e.preventDefault();
     modal.removeClass("modal--active");
   });
