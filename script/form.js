@@ -40,8 +40,8 @@ $('.form').submit(e => {
       },
       success: (data) => {
         content.text(data.message);
-
         modal.addClass("modal--active");
+        e.target.reset(); 
       },
       error: (error) => {
         const message = "Ошибка сервера";
@@ -56,6 +56,8 @@ $('.form').submit(e => {
     e.preventDefault();
     modal.removeClass("modal--active");
   });
+
+  
 });
 
 
