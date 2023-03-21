@@ -22,6 +22,7 @@ $('.form').submit(e => {
   const to = form.find("[name='to']");
 
   const modal = $('.modal');
+  const fixedMenu = $('.fixed-menu');
   const content = modal.find(".modal__content");
   modal.removeClass("modal__content--error");
 
@@ -41,6 +42,7 @@ $('.form').submit(e => {
       success: (data) => {
         content.text(data.message);
         modal.addClass("modal--active");
+        fixedMenu.addClass("fixed-menu--hidden");
         e.target.reset(); 
       },
       error: (error) => {
@@ -48,6 +50,7 @@ $('.form').submit(e => {
         content.text(message);
         modal.addClass("modal--active");
         modal.addClass("modal__content--error");
+        fixedMenu.addClass("fixed-menu--hidden");
       }
     });
 
@@ -55,8 +58,8 @@ $('.form').submit(e => {
   $(".app-submit-btn").click((e) => {
     e.preventDefault();
     modal.removeClass("modal--active");
+    fixedMenu.removeClass("fixed-menu--hidden");
   });
-
   
 });
 
