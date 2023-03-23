@@ -53,12 +53,13 @@ $('.form').submit(e => {
         fixedMenu.addClass("fixed-menu--hidden");
       }
     });
-
+    body.style.overflow = "hidden";
   }
   $(".app-submit-btn").click((e) => {
     e.preventDefault();
     modal.removeClass("modal--active");
     fixedMenu.removeClass("fixed-menu--hidden");
+    body.style.overflow = "";
   });
   
 });
