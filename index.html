@@ -11,8 +11,8 @@
 
 <body>
   <div class="wrapper">
-    <div class="maincontent">
-      <section class="hero">
+    <div class="main-content">
+      <section class="section hero is-active">
         <div class="container hero__container">
 
           <header class="header">
@@ -510,6 +510,42 @@
         </div>
       </section>
 
+      <section class="section section--background-wave">
+        <h2 class="section__title section__title--variants">меню</h2>
+        <ul class="variants">
+          <li class="variants__item variants__item--active">
+            <a href="" class="variants__button variants__button--active" style="background-image: url(./img/comments/long.jpg);">
+              <span class="variants__button-text">Лонгборды</span>
+            </a>
+            <div class="variants__content ">
+              <p class="variants__decs">Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться
+                на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша,
+                не прилагая особых усилий ехать по ним.</p>
+            </div>
+          </li>
+          <li class="variants__item ">
+            <a href="" class="variants__button" style="background-image: url(./img/comments/short.jpg);">
+              <span class="variants__button-text">Шортборды</span>
+            </a>
+            <div class="variants__content">
+              <p class="variants__decs">Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться
+                на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша,
+                не прилагая особых усилий ехать по ним.</p>
+            </div>
+          </li>
+          <li class="variants__item ">
+            <a href="" class="variants__button" style="background-image: url(./img/comments/soft.jpg);">
+              <span class="variants__button-text">Софттопы</span>
+            </a>
+            <div class="variants__content">
+              <p class="variants__decs">Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться
+                на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша,
+                не прилагая особых усилий ехать по ним.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       <section class="section">
         <div class="container">
           <h2 class="section__title section__title--review">Отзывы</h2>
@@ -669,15 +705,7 @@
           </form>
         </div>
       </section>
-      <div id="modal" class="modal">
-        <div class="modal__for-background"></div>
-        <div class="modal__container">
-          <div class="modal__content"></div>
-          <div class="modal__button-container">
-            <a href="#" class="btn app-submit-btn btn--theme--light">ЗАКРЫТЬ</a>
-          </div>
-        </div>
-      </div>
+      
 
       <section class="section">
         <div class="container map--container">
@@ -730,9 +758,18 @@
         </div>
       </section>
 
-      <footer class="footer">
+      <!-- <footer class="footer">
+      </footer> -->
+    </div>
+  </div>
 
-      </footer>
+  <div id="modal" class="modal">
+    <div class="modal__for-background"></div>
+    <div class="modal__container">
+      <div class="modal__content"></div>
+      <div class="modal__button-container">
+        <a href="#" class="btn app-submit-btn btn--theme--light">ЗАКРЫТЬ</a>
+      </div>
     </div>
   </div>
 
@@ -761,25 +798,25 @@
   <nav class="fixed-menu">
     <ul class="fixed-menu__list">
       <li class="fixed-menu__item fixed-menu__item--active">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="0"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="1"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="2"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="3"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="4"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="5"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="6"></a>
       </li>
     </ul>
   </nav>
@@ -789,7 +826,9 @@
   <script src="./script/rewiews.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <script src="./script/slider.js"></script>
+  <script src="./script/horizontal-acco.js"></script>
   <script src="./script/form.js"></script>
+  <!-- <script src="./script/onePageScroll.js"></script> -->
 </body>
 
 </html>
