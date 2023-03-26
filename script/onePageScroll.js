@@ -11,13 +11,12 @@ let onePageScroll = () => {
   wheel();
   keyPush();
 
+  //   функция прокрутки к нужной странице
   function doTransition(pageNumber) {
     const position = `${pageNumber * (-100)}%`;
 
     if (inScroll) return;
-
     inScroll = true;
-
     addClass(pages);
 
     content.style.transform = `translateY(${position})`;
@@ -28,16 +27,31 @@ let onePageScroll = () => {
     }, 1000);
 
     function addClass(arr) {
-      arr[pageNumber].classList.add('fixed-menu__item--active');
-
+      arr[pageNumber].classList.add('is-active');
       for (const item of arr) {
         if (item != arr[pageNumber]) {
-          item.classList.remove('fixed-menu__item--active');
+          item.classList.remove('is-active');
         }
       }
+
+      const dataLight = pages[pageNumber].dataset.light;
+      const fixedMenu = $('.fixed-menu__item');
+      const fixedMenuLink = $('.fixed-menu__link');
+      const hamburger = $('.hamburger__plank');
+      if (dataLight == 1) {
+        fixedMenu.addClass('dark');
+        fixedMenuLink.addClass('dark');
+        hamburger.addClass('dark');
+      } else {
+        fixedMenu.removeClass('dark');
+        fixedMenuLink.removeClass('dark');
+        hamburger.removeClass('dark');
+      }
     }
+
   }
 
+  // функция навигации по клику data-scroll
   function addNavigation() {
     for (const point of dataScrollto) {
       point.addEventListener('click', e => {
@@ -47,6 +61,7 @@ let onePageScroll = () => {
     }
   }
 
+  // функция работы с колесиком мышки
   function wheel() {
     document.addEventListener('wheel', e => {
       const direct = e.deltaY > 0 ? 'up' : 'down';
@@ -55,6 +70,7 @@ let onePageScroll = () => {
     })
   }
 
+  // функция отработки нажатия стрелочек на клавиатуре
   function keyPush() {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
@@ -70,6 +86,7 @@ let onePageScroll = () => {
     })
   }
 
+  // функция определения нужной страницы нам и навешивает класс активный
   function definePage(arr) {
     for (let i = 0; i < arr.length; i++) {
       let iter = arr[i];
@@ -84,6 +101,7 @@ let onePageScroll = () => {
     }
   }
 
+  // функция определяет куда скроли полльзователь и вызывает doTransition
   function scrollToPage(direct) {
     let page = definePage(pages);
     if (direct === 'up' && page.iterNext) {
