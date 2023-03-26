@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 1.28rem;
+  margin-bottom: 1.94rem;
+  color: #fff;
+  font-weight: bold;
+
+  @include tablets {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: #1968B1;
+      width: 100%;
+      height: rem(89px);
+      top: 0%;
+      left: 0%;
+      right: 0%;
+    }
+  }
+
+  @include phones {
+    padding-top: rem(11px);
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: #1968B1;
+      width: 100%;
+      height: rem(78px);
+      top: 0%;
+      left: 0%;
+      right: 0%;
+    }
+  }
+}
+
+.phone-number.header__phone-number {
+
+  @include tablets {
+    display: none;
+  }
+}
