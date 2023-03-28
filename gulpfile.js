@@ -1,88 +1,93 @@
-const { src, dest, task, series, watch, parallel } = require('gulp');
-const clean = require('gulp-clean');                                             //подключение очищения папки
-const browserSync = require('browser-sync').create();                            // подключение запуска сервера
-const reload = browserSync.reload;                                               // для автоматической перезагрузки страницы
-// const gcmq = require('gulp-group-css-media-queries');                         // подключение media кампилятора (ломает шрифты)
-const cleanCSS = require('gulp-clean-css');                                      // минификация css
-const sourcemaps = require('gulp-sourcemaps');                                   // добавление меток 
-const concat = require('gulp-concat');                                           // соединение в один файл
-const babel = require('gulp-babel');                                             // галп для преобразования js под более старые версии
-const uglify = require('gulp-uglify');                                           // минификатор js 
-const rename = require("gulp-rename");                                           // галп для переименования файла
-const svgo = require('gulp-svgo');                                               // минимизация SVG-файлов
-// const svgSprite = require('gulp-svg-sprite');                                    // собирает svg в sprite (у меня все и так в спрайте)
+const { src, dest, task, series, watch, parallel } = require("gulp");
+const clean = require("gulp-clean"); //подключение очищения папки
+const rm = require("gulp-rm");
+const browserSync = require("browser-sync").create(); // подключение запуска сервера
+const reload = browserSync.reload; // для автоматической перезагрузки страницы
+// const gcmq = require('gulp-group-css-media-queries');// подключение media кампилятора (ломает шрифты)
+const cleanCSS = require("gulp-clean-css"); // минификация css
+const sourcemaps = require("gulp-sourcemaps"); // добавление меток
+const concat = require("gulp-concat"); // соединение в один файл
+const babel = require("gulp-babel"); // галп для преобразования js под более старые версии
+const uglify = require("gulp-uglify"); // минификатор js
+const svgo = require("gulp-svgo"); // минимизация SVG-файлов
+const sassGlob = require("gulp-sass-glob");
+const sass = require("gulp-sass")(require("node-sass"));
+// const svgSprite = require('gulp-svg-sprite');// собирает svg в sprite (у меня все и так в спрайте)
+
+const {SRC_PATH, DIST_PATH} = require('./gulp.config');
+const gulpif = require('gulp-if');
+
+const env = process.env.NODE_ENV;
 
 
-task('clean', () => {                                                      // очищает папку dist
-  return src('dist/**/*', { read: false }).pipe(clean());
+task("clean", () => {
+  return src(`${DIST_PATH}/**/*`, { read: false }).pipe(rm());
 });
 
-task('copy:html', () => {                                                       //копирует файл index.html и вставляет его в папку dist
-  return src('index.html')
-    .pipe(dest('dist'))
+task("copy:html", () => {
+  //копирует файл index.html и вставляет его в папку dist
+  return src(`${SRC_PATH}/index.html`)
+    .pipe(dest(DIST_PATH))
     .pipe(reload({ stream: true }));
 });
 
-
-task('styles', () => {
-  return src('main.css')
-    //.pipe(sourcemaps.init())                                                     // создадим метки
-    // .pipe(gcmq())                                                            //media кампилятор (ломает шрифты)
-    .pipe(cleanCSS())                                                           // минификаатор
-    //.pipe(sourcemaps.write())                                                    // вставим метки
-    .pipe(dest('dist'));                                                        //копирует файл main.css и вставляет его в папку dist
+task("styles", () => {
+  return (
+    src(`${SRC_PATH}/styles/stile.scss`)
+      .pipe(gulpif(env === 'dev', sourcemaps.init()))
+      .pipe(concat("main.min.scss"))
+      .pipe(sassGlob())
+      .pipe(sass())
+      .pipe(gulpif(env === 'prod', cleanCSS()))
+      .pipe(gulpif(env === 'dev', sourcemaps.write()))
+      .pipe(dest(DIST_PATH))
+      .pipe(reload({ stream: true }))
+  );
 });
 
-
-const jsFiles = [                                                                  // массив без js для видео, ибо он ломается
-  'src/scripts/jQuery.js',
-  'src/scripts/*.js',
-  '!src/scripts/player.js'
-]
-
-task('player', () => {                                                           //что бы скопировать js для видео
-  return src('src/scripts/player.js')
-    //.pipe(sourcemaps.init())                                                      // создадим метки
-    .pipe(babel({ presets: ['@babel/env'] }))                                         // преобр js d более ст v
-    // .pipe(uglify())                                                                 // минификаатор
-    // .pipe(rename('player.min.js'))                                                  // переименовала
-    //.pipe(sourcemaps.write())                                                     // вставим метки 
-    .pipe(dest('dist'));
+task("scripts", () => {
+  return src([`${SRC_PATH}/scripts/*.js`])
+    .pipe(gulpif(env === 'dev', sourcemaps.init()))
+    .pipe(concat("main.min.js")) // соединяет в 1 файл.js
+    .pipe(gulpif(env === 'prod', babel({
+      presets: ['@babel/env']
+    })))
+    .pipe(gulpif(env === 'prod', uglify()))
+    .pipe(gulpif(env === 'dev', sourcemaps.write()))
+    .pipe(dest(DIST_PATH))
+    .pipe(reload({ stream: true }));
 });
 
-task('scripts', () => {
-  return src(jsFiles)
-    .pipe(sourcemaps.init())                                                      // создадим метки
-    .pipe(concat('main.js'))                                                        // соединяет в 1 файл.js
-    // .pipe(babel({ presets: ['@babel/env'] }))                                         // преобр js d более ст v
-    .pipe(uglify())                                                                 // минификаатор
-    .pipe(sourcemaps.write())                                                     // вставим метки 
-    .pipe(dest('dist'));
+task("icons", () => {
+  return src(`${SRC_PATH}/images/icons/*.svg`).pipe(dest(`${DIST_PATH}/images/icons`));
 });
 
-task('icons', () => {
-  return src('src/images/**/*.svg')
-    .pipe(dest('dist/images'));
+task("pic", () => {
+  return src(`${SRC_PATH}/images/png/*`).pipe(dest(`${DIST_PATH}/images/png`));
 });
 
-task('pic', () => {
-  return src('src/images/**/*')
-    .pipe(dest('dist/images'));
-});
-
-task('server', () => {                                                           // запуск сервера
+task("server", () => {
+  // запуск сервера
   browserSync.init({
     server: {
-      baseDir: "dist"
+      baseDir: "./dist",
     },
-    open: false
+    open: false,
   });
 });
 
+task("watch", () => {
+  watch("index.html", series("copy:html")); // следит за изменениями в index.html, и запускает copy:html
+  watch(`${SRC_PATH}/styles/**/*.scss`, series("styles")); // следит за изменениями в main.css, и запускает styles
+  watch(`${SRC_PATH}/scripts/*.js`, series("scripts")); // следит за изменениями в jsFiles, и запускает scripts
+  watch(`${SRC_PATH}/images/icons/icons/*.svg`, series("icons"));
+  watch(`${SRC_PATH}/images/icons/png/*.png`, series("pic"));
+});
 
-// watch('index.html', series('copy:html'));                                       // следит за изменениями в index.html, и запускает copy:html
-// watch('main.css', series('styles'));                                            // следит за изменениями в main.css, и запускает styles
-// watch('jsFiles', series('scripts'));                                            // следит за изменениями в jsFiles, и запускает scripts
-// watch('src/scripts/player.js', series('player'));
-
-task('default', series('clean', parallel('copy:html', 'styles', 'player', 'scripts', 'icons', 'pic'), 'server'));         // запускает необходимые ф-ции в нужном порядке по команде "npm run gulp"
+task(
+  "default",
+  series("clean",
+    parallel("copy:html", "styles", "scripts", "icons", "pic"),
+    parallel("watch", "server")
+  )
+);
