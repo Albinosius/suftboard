@@ -1,0 +1,91 @@
+.team {
+  display: flex;
+  justify-content: space-between;
+  color: $black;
+  text-align: center;
+
+  &__item {
+    max-width: rem(220px);
+  }
+
+// КАРТИНКИ
+  &__pic-wrap {
+    width: 100%;
+    // height: rem(290px);
+    overflow: hidden;
+    margin-bottom: rem(22px);
+  }
+
+// ИМЯ ФАМИЛИЯ
+
+  &__title {
+    margin-bottom: rem(9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  
+    &-name {
+      font-size: 21px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    &-triangle {
+      border: 7px solid transparent;
+      width: 0;
+      height: 0;
+      border-top-color: $black;
+      border-bottom-color: $black;
+      border-bottom-width: 0;
+      border-left-width: 4px;
+      border-right-width: 4px;
+
+      &--active {
+      border-top-width: 0;
+      border-bottom-width: 7px;
+      }
+    }
+
+  }
+
+// ДОЛЖНОСТЬ
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: height .3s;
+  }
+
+  &__inf {
+    text-decoration: none;
+    height: rem(100px);
+
+    &-prof {
+      margin-bottom: rem(9px);
+    }
+
+    &-duty {
+      color: $gray;
+    }
+
+    @include tablets {
+      height: rem(400px);
+      width: rem(222px);
+    }
+  }
+}
+
+.team--version--desctop {
+  @include tablets {
+    display: none;
+  }
+}
+
+.team--version--mobile {
+  display: none;
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
