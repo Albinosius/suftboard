@@ -97,7 +97,7 @@ img {
   min-height: 36.2rem;
   color: #fff;
   overflow: hidden;
-  background: url("./img/background/two-boy.png") top right 10% no-repeat;
+  background: url("./images/png/Back-two-boy.png") top right 10% no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   background-size: cover;
@@ -508,7 +508,7 @@ img {
 }
 
 .section--font-color--white {
-  background: url(./img/background/order-back.png) center center/cover no-repeat;
+  background: url(./images/png/Back-order.png) center center/cover no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   color: #fff;
@@ -519,7 +519,7 @@ img {
 }
 
 .section--background-wave {
-  background: url(./img/background/Back-menu.jpg) center center/cover no-repeat;
+  background: url(./images/png/Back-menu.jpg) center center/cover no-repeat;
   color: #fff;
   position: relative;
   -webkit-box-pack: start;
@@ -641,7 +641,7 @@ img {
   display: none;
 }
 .benefits__item::before {
-  content: url(../../img/why/shapes.png);
+  content: url(./images/png/shapes.png);
   position: absolute;
   top: 3.33rem;
   right: 0;
@@ -1139,6 +1139,7 @@ img {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  z-index: 2;
 }
 .variants__item {
   display: -webkit-box;
@@ -1371,7 +1372,7 @@ img {
   content: "";
   display: block;
   position: absolute;
-  background: url(./img/comments/short.jpg) center center/cover no-repeat;
+  background: url(./images/png/short.jpg) center center/cover no-repeat;
   top: 0;
   bottom: 0;
   left: 0;
